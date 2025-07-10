@@ -20,7 +20,7 @@ def register_handlers(dp):
 
 @router.message(Command("start"))
 async def cmd_start(message: Message, state: FSMContext):
-    await message.answer("Привет! Давайте начнём анкету. Как вас зовут?", reply_markup=start_kb())
+    await message.answer("Приветствую! Давайте начнём анкету. Назовите ваше имя.", reply_markup=start_kb())
     await state.set_state(Form.name)
 
 @router.message(StateFilter(Form.name))
